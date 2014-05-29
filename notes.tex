@@ -1,0 +1,63 @@
+\newcount\Comments  
+\Comments=1   
+\documentclass[a4paper,12pt, english]{article}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{babel}
+%\usepackage{amsmath}
+
+\usepackage{color}
+
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{purple}{rgb}{1,0,1}
+%\usepackage{subcaption}
+
+\newcommand{\kibitz}[2]{\ifnum\Comments=1\textcolor{#1}{#2}\fi}
+% add yourself here:
+\newcommand{\ls}[1]{\kibitz{red}      {[Larisa: #1]}}
+\newcommand{\cg}[1]  {\kibitz{purple}   {[Crina: #1]}}
+\newcommand{\ns}[1]{\kibitz{cyan}     {[Noureddin: #1]}}
+
+
+
+\usepackage{listings}
+\usepackage{url}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+
+%\usepackage{caption}
+%\usepackage{datetime}
+
+%\onehalfspacing
+
+\begin{document}
+
+\title{A List of Suggestions/Notes/Ideas}
+%\date{Mar 2014}
+%\author{By: Noureddin Sadawi}
+%\maketitle
+
+\large
+\section{Noureddin (\today)}
+\begin{itemize}
+	\item Activity can be deduced using the differences between initial and final fluorescence
+	\item There are three types of fluorescence (cherry, sapphire and venus)
+	\item I guess the activity/toxicity can be measured using a combination of the three values
+	\item Cherry pick data has compounds picked after initial mass screening (compounds that show promising results/activities)
+	\item These compounds are then tested using different concentration levels (a column in the cherry pick tables)
+\end{itemize}  
+
+\section{Larisa}
+\begin{itemize}
+	\item \ls{use this when you comment on someone else's section}
+\end{itemize}
+
+\section{Crina}
+\begin{itemize}
+	\item \cg{use this when you comment on someone else's section}
+\end{itemize}
+
+
+		
+\end{document}
