@@ -18,3 +18,4 @@ Experiment update: 11/09/2014 by NS
      Decision Tress, Naive Bayes, kNN with k = 5 and SVM
 - I have used binary labelled data from TS3-6 as testing data and recorded results in TS[3-6]-TS7.csv files
 - The result files are tables showing Chem ID, Actual Class and Predicted Classes made by the above mentioned classifiers
+- Observe when the same chem id repeats, this means it is there with diff concentrations!
