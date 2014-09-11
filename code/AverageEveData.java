@@ -6,7 +6,7 @@
  - formulas are also available in kevin's thesis!
  - several new columns will be introduced as a result of these computations
  - notice that id_chemical can repeat because the same chemical might have several experiments
- - We attach a random string to id_chemical to distinguish between things
+ - obselete: We attach a random string to id_chemical to distinguish between things
  - This application will print results to std out
  - we can use:    java AverageEveData > out.csv
 */
@@ -47,12 +47,12 @@ private static List<String> splitByCommasNotInQuotes(String s) {
 		else if (!quoteMode && ",".equals(sep))
 		{
 			int toPos = m.start();
-			list.add(s.substring(pos, toPos));
+			list.add((s.substring(pos, toPos)).trim());
 			pos = m.end();
 		}
 	}
 	if (pos < s.length())
-		list.add(s.substring(pos));
+		list.add((s.substring(pos)).trim());
 	return list;
 }
 
@@ -199,21 +199,19 @@ public static void printListOfColNames(List<String> csvList){
 
 
 public static void printCSVList(List<List<String>> csvList){
-       int ij = 0;
-	  //write the CSV back out to the console
+       //int ij = 0;
     	for(List<String> csv : csvList)
     	{
-    		//dumb logic to place the commas correctly
     		if(!csv.isEmpty())
     		{
     			System.out.print(csv.get(0));
-    			if(csv.get(0).equals("1")) ij++;
+    			//if(csv.get(0).equals("1")) ij++;
     			for(int i=1; i < csv.size(); i++)
     			{
     				System.out.print("," + csv.get(i));
     			}
     		}
-    		System.out.print(" - "+ij+"\n");
+    		//System.out.print(" - "+ij+"\n");
     	}
 }
 
@@ -275,9 +273,9 @@ public static double[] listToDoubleArray(List<String> csvList){
 	public static void printChemIDAndDoubleMatrix(int id, double[][] values){
 	   for(int i = 0; i < values.length; i++){
 	      //id_chemicals can repeat in mass screen data, so we attach a random string
-	      UUID rnd = UUID.randomUUID();
-	      System.out.print(id+"_"+String.valueOf(rnd)+", ");
-	      //System.out.print(id+", ");		   	   
+	      //UUID rnd = UUID.randomUUID();
+	      //System.out.print(id+"_"+String.valueOf(rnd)+", ");
+	      System.out.print(id+", ");		   	   
 	      printDoubleArray(values[i]);
 	   }	
 	}
@@ -430,8 +428,18 @@ public static void removeControls(List<Chem> chemList, LinkedHashMap chemRLE) {
 
   int ctrlChemID = 1313;//id_chemical for control
 
-  String fileName = "/home/likewise-open/ACADEMIC/csstnns/Desktop/CherryPick.csv";
+  //String fileName = "/home/likewise-open/ACADEMIC/csstnns/Desktop/CherryPick.csv";
   //String fileName = "/home/likewise-open/ACADEMIC/csstnns/Downloads/MassScreen.csv";
+   String fileName = "";
+    
+   if (args.length > 0 ) {
+     fileName = args[0];
+   } else {
+     System.out.println("Please provide a csv file name!");
+     System.err.println("Invalid arguments count:" + args.length);
+     System.exit(-1);
+   }
+
 
   try{
 	//get a list of column names (fst line of file)
@@ -587,21 +595,7 @@ public static void removeControls(List<Chem> chemList, LinkedHashMap chemRLE) {
 
   }
 
-//simple class to model a chemical compound
-/*
-  static  class Chemical {
-	int chemID;
-	double [][] compoundValues;
-	public Chemical(int chemID, double [][] compoundValues){
-	    this.chemID = chemID;
-	    this.compoundValues = new double[compoundValues.length][];
-	    for(int i = 0; i < compoundValues.length; i++)
-	      this.compoundValues[i] = compoundValues[i].clone();
-		    
-       }
-  }
-  */
-  
+
   
   //simple class to model a well
   static  class Well {

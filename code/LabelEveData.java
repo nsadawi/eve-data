@@ -47,12 +47,12 @@ private static List<String> splitByCommasNotInQuotes(String s) {
 		else if (!quoteMode && ",".equals(sep))
 		{
 			int toPos = m.start();
-			list.add(s.substring(pos, toPos));
+			list.add((s.substring(pos, toPos)).trim());
 			pos = m.end();
 		}
 	}
 	if (pos < s.length())
-		list.add(s.substring(pos));
+		list.add((s.substring(pos)).trim());
 	return list;
 }
 
@@ -69,7 +69,7 @@ public static List<String> readColumnNames(String inFile){
 		{
 			BufferedReader infile = new BufferedReader( new FileReader( inFile ) ); // input1.txt
 
-			String line = infile.readLine(); // skip 1st line - it's the headers - column names!
+			String line = infile.readLine(); // 1st line - it's the headers - column names!
 			csvList = splitByCommasNotInQuotes(line);
 			
 			infile.close();			
@@ -492,45 +492,117 @@ public static void printListOfColNames(List<String> csvList){
 }
 
 
-public static void printCSVList(List<List<String>> csvList){
-       int ij = 0;
-	  //write the CSV back out to the console
+/**
+ * given lists of all averaged data, autoF, def toxic, possibly toxic and inactive compounds
+ * print out all data records and their corresponding class
+ * we use chem_id to look up a chemical in corresponding lists
+ * if a compound is not in any list then it's Active
+ * possibly active compounds (for MCherry, Sapphire or Venus channels)
+ * it returns a list of inactive compound id's (id's non existing in any of the 3 poss active lists)
+ * @param  csvList a list of list of strings (representing csv text lines)
+ * @param  autoFComps autoFComps compounds
+ * @param defToxComps defToxComps Compounds 
+ * @param possToxComps possToxComps Compounds 
+ * @param inactComps inActive Compounds 
+ */ 
+public static void printLabelledData(List<List<String>> csvList, List<String> autoFComps, List<String> defToxComps, List<String> inactComps, List<String> possToxComps){
+
     	for(List<String> csv : csvList)
     	{
-    		//dumb logic to place the commas correctly
     		if(!csv.isEmpty())
     		{
-    			System.out.print(csv.get(0));
-    			if(csv.get(0).equals("1")) ij++;
+    			//get id of compound
+    			String id_chem = csv.get(0);
+    			System.out.print(id_chem+",");
+
     			for(int i=1; i < csv.size(); i++)
     			{
-    				System.out.print("," + csv.get(i));
+    				System.out.print(csv.get(i)+",");
     			}
-    		}
-    		System.out.print(" - "+ij+"\n");
+    			
+    			if (autoFComps.contains(id_chem)) {
+			    System.out.print("Autofluorescent");
+			} else {
+			    if (defToxComps.contains(id_chem)) {
+			       System.out.print("Definitely Toxic");
+			    } else
+			       if (inactComps.contains(id_chem)) {
+			         System.out.print("Inactive");
+			       } else
+			          if (possToxComps.contains(id_chem)) {
+			            System.out.print("Possibly Toxic");
+			          } else			
+			             System.out.print("Active");
+			}
+    		  System.out.println();
+    		}    		
+    	}
+}
+
+/**
+ * given lists of all averaged data, autoF, def toxic, possibly toxic and inactive compounds
+ * print out data records for compounds which are either active or inactive and their corresponding class
+ * we use chem_id to look up a chemical in corresponding lists
+ * if a compound is not in any list then it's Active
+ * possibly active compounds (for MCherry, Sapphire or Venus channels)
+ * it returns a list of inactive compound id's (id's non existing in any of the 3 poss active lists)
+ * @param  csvList a list of list of strings (representing csv text lines)
+ * @param  autoFComps autoFComps compounds
+ * @param defToxComps defToxComps Compounds 
+ * @param possToxComps possToxComps Compounds 
+ * @param inactComps inActive Compounds 
+ */ 
+public static void printLabelledActiveInactiveData(List<List<String>> csvList, List<String> autoFComps, List<String> defToxComps, List<String> inactComps, List<String> possToxComps){
+
+    	for(List<String> csv : csvList)
+    	{
+    		if(!csv.isEmpty())
+    		{
+    			//get id of compound
+    			String id_chem = csv.get(0);
+    			    			
+    			if (inactComps.contains(id_chem)) {
+    			       System.out.print(id_chem+",");
+    			       for(int i=1; i < csv.size(); i++)
+    			       {
+    				 System.out.print(csv.get(i)+",");
+    			       }
+			       System.out.print("Inactive\n");
+			} else
+			   if (!autoFComps.contains(id_chem) && !defToxComps.contains(id_chem) && !possToxComps.contains(id_chem)){
+			       System.out.print(id_chem+",");
+    			       for(int i=1; i < csv.size(); i++)
+    			       {
+    				 System.out.print(csv.get(i)+",");
+    			       }
+			      System.out.print("Active\n");
+			   }			           			    		    			
+			
+    		  //System.out.println();
+    		}    		
     	}
 }
 
 
-	public static void printList(List<String> csvList){
+public static void printList(List<String> csvList){
        
 			    //id's for values we want from csv file (venus, sapphire ..etc)
 			    // int e[] = {9,10,11,12,15,16,17,18,21,22,23,24};
 	    			   	     
-	  	int e[] = {0,1,2,3,4,9,10,11,12,15,16,17,18,21,22,23,24};
+	  	//int e[] = {0,1,2,3,4,9,10,11,12,15,16,17,18,21,22,23,24};
 	  
-	    		if(!csvList.isEmpty() && (e.length <= csvList.size()))
+	    		if(!csvList.isEmpty())
 	    		{
-	    			System.out.print(csvList.get(e[0]));
+	    			//System.out.print(csvList.get(0));
 	    			//if(csvList.get(0).equals("1")) ij++;
-	    			for(int i=1; i < e.length; i++)
+	    			for(int i=0; i < csvList.size(); i++)
 	    			{
-	    				System.out.print("," + csvList.get(e[i]));
+	    				System.out.println(csvList.get(i));
 	    			}
 	    		}
-	    		System.out.println();
+	    		//System.out.println();
 
-	}
+}
 	
 	
 	
@@ -547,11 +619,23 @@ public static void printCSVList(List<List<String>> csvList){
 
   public static void main(String args[]){             
     //String fileName = "values_with_mean_of_control.csv";
-    String fileName = "values.csv";
+    //String fileName = "AvgMerged.csv";
+    
+    String fileName = "";
+    
+   if (args.length > 0 ) {
+     fileName = args[0];
+   } else {
+     System.out.println("Please provide a csv file name!");
+     System.err.println("Invalid arguments count:" + args.length);
+     System.exit(-1);
+   }
+   
     try{  	
        List<String> colNames = readColumnNames(fileName);
-  	//printListOfColNames(colNames);
-  	int chemID = findColumnID(colNames, "id_chemical");
+       colNames.add("Label");
+  	printListOfColNames(colNames);
+  	int chemID = findColumnID(colNames, "id_chemical"); //System.out.println(chemID);
   	
 	//F-Cherry,F-Sapphire,F-Venus,HitRatio-Cherry,HitRatio-Sapphire,HitRatio-Venus,MIY-Cherry,MIY-Sapphire,MIY-Venus,DT-Cherry,DT-Sapphire,DT-Venus
   	int fCherry = findColumnID(colNames, "F-Cherry");
@@ -576,8 +660,12 @@ public static void printCSVList(List<List<String>> csvList){
   	
   	
   	List<List<String>> csvList = readFile(fileName,/*skip 1st line?*/ true);
+  	//printCSVList(csvList);
   	
-  	List<String> csvIDChemicals = getAllIDChemicals(csvList, chemID);
+  	
+  	//not used at the moment!
+  	//List<String> csvIDChemicals = getAllIDChemicals(csvList, chemID);
+  	
   	/*for(String e : csvIDChemicals)
     	{    		
     	   System.out.println("chem id " + e );
@@ -601,11 +689,13 @@ public static void printCSVList(List<List<String>> csvList){
   	double[] vdtSapphire = findColValues(csvList, dtSapphire);
   	double[] vdtVenus = findColValues(csvList, dtVenus);
   	*/
-  	System.out.println(csvList.size());
+  	//System.out.println(csvList.size());
+  	
   	List<String> autoFluorescentCompounds = findAutofluorescentCompounds(csvList,chemID, fCherry,fSapphire, fVenus);
   	//remove Autofluorescent Compounds
-  	removeElements(csvList, autoFluorescentCompounds, chemID);
-   	System.out.println("Size after removing Autofluorescent Compounds: "+csvList.size());
+  	//removeElements(csvList, autoFluorescentCompounds, chemID);   	
+  	//System.out.println("Autofluorescent Compounds: "+autoFluorescentCompounds.size());
+  	
   	
   	List<String> mcherryPHitCompounds  = findPotentialHitCompounds(csvList, chemID, hrCherry);
   	List<String> sapphirePHitCompounds = findPotentialHitCompounds(csvList, chemID, hrSapphire);
@@ -613,8 +703,8 @@ public static void printCSVList(List<List<String>> csvList){
 	
 	List<String> definitelyToxicCompounds = findDefinitelyToxicCompounds(mcherryPHitCompounds, sapphirePHitCompounds, venusPHitCompounds);
 	//remove definitely Toxic Compounds
-  	removeElements(csvList, definitelyToxicCompounds, chemID);
-  	System.out.println("Size after removing definitely Toxic Compounds: "+csvList.size());
+  	//removeElements(csvList, definitelyToxicCompounds, chemID);
+  	//System.out.println("definitely Toxic Compounds Compounds: "+definitelyToxicCompounds.size()); 
   	
 	List<String> mcherryPossiblyActiveCompounds = findPossiblyActiveCompounds(csvList, chemID, miyCherry, dtCherry);
 	List<String> sapphirePossiblyActiveCompounds = findPossiblyActiveCompounds(csvList, chemID, miySapphire, dtSapphire);
@@ -622,14 +712,24 @@ public static void printCSVList(List<List<String>> csvList){
 	
 	List<String> inactiveCompounds = findInactiveCompounds(csvList, chemID, mcherryPossiblyActiveCompounds, sapphirePossiblyActiveCompounds, venusPossiblyActiveCompounds);
 	//remove inactive Compounds
-  	removeElements(csvList, inactiveCompounds, chemID);
-  	System.out.println("Size after removing inactive Compounds: "+csvList.size());
+  	//removeElements(csvList, inactiveCompounds, chemID);  	
+  	//System.out.println("Inactive Compounds: "+inactiveCompounds.size());
   	
   	
 	List<String> possiblyToxicCompounds = findPossiblyToxicCompounds(csvList, chemID,mcherryPHitCompounds, sapphirePHitCompounds, venusPHitCompounds,mcherryPossiblyActiveCompounds, sapphirePossiblyActiveCompounds, venusPossiblyActiveCompounds);
+	//System.out.println("possibly Toxic Compounds Compounds: "+possiblyToxicCompounds.size()); 
 	//remove possibly Toxic Compounds
-  	removeElements(csvList, possiblyToxicCompounds, chemID);
-  	System.out.println("Size after removing possibly Toxic Compounds: "+csvList.size());
+  	//removeElements(csvList, possiblyToxicCompounds, chemID);
+  	
+  	//if a compound is none of the above, then it's active
+  	//System.out.println("Active Compounds: "+csvList.size());
+	
+	
+	//print out the whole labelled dataset
+	//printLabelledData( csvList, autoFluorescentCompounds, definitelyToxicCompounds, inactiveCompounds, possiblyToxicCompounds);
+	
+	//print out the whole labelled active and inactive compounds
+	printLabelledActiveInactiveData( csvList, autoFluorescentCompounds, definitelyToxicCompounds, inactiveCompounds, possiblyToxicCompounds);
 	
 	/*
 	for (int idx=0; idx<10; ++idx){
@@ -640,7 +740,7 @@ public static void printCSVList(List<List<String>> csvList){
 	 
   	//findPotentialHitCompounds(csvList, hrCherry, hrSapphire, hrVenus);
   	//findPossiblyActive(csvList, miyCherry, miySapphire, miyVenus, dtCherry, dtSapphire, dtVenus);
-  	System.out.println(csvList.size());
+  	//System.out.println(csvList.size());
   	//System.out.println(v.length);
   	//printDoubleArray(v);
     }//close try
