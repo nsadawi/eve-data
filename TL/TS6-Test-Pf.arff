@@ -1,32 +1,33 @@
 @relation TS6-Test-Pf
 
-@attribute 1325.5 numeric
-@attribute 55544.25 numeric
-@attribute 0 numeric
-@attribute 2.29334 numeric
-@attribute 3053 numeric
-@attribute 73525.75 numeric
-@attribute 2.83574 numeric
-@attribute 2.9093 numeric
-@attribute 3068.5 numeric
-@attribute 42849.25 numeric
-@attribute 1.53457 numeric
-@attribute 2.77302 numeric
-@attribute -0.00227 numeric
-@attribute -0.00145 numeric
-@attribute -0.0054 numeric
-@attribute 1.55946 numeric
-@attribute 1.1098 numeric
-@attribute 1.40923 numeric
-@attribute -0.96345 numeric
-@attribute 1.57977 numeric
-@attribute 0.46416 numeric
-@attribute 1.23909 numeric
-@attribute 0.97115 numeric
-@attribute 1.12696 numeric
-@attribute Inactive {Inactive,Active}
+@attribute cherry-initial-fluorescence numeric
+@attribute cherry-final-fluorescence numeric
+@attribute cherry-lagtime2 numeric
+@attribute cherry-doubletime numeric
+@attribute sapphire-initial-fluorescence numeric
+@attribute sapphire-final-fluorescence numeric
+@attribute sapphire-lagtime2 numeric
+@attribute sapphire-doubletime numeric
+@attribute venus-initial-fluorescence numeric
+@attribute venus-final-fluorescence numeric
+@attribute venus-lagtime2 numeric
+@attribute venus-doubletime numeric
+@attribute F-Cherry numeric
+@attribute F-Sapphire numeric
+@attribute F-Venus numeric
+@attribute HitRatio-Cherry numeric
+@attribute HitRatio-Sapphire numeric
+@attribute HitRatio-Venus numeric
+@attribute MIY-Cherry numeric
+@attribute MIY-Sapphire numeric
+@attribute MIY-Venus numeric
+@attribute DT-Cherry numeric
+@attribute DT-Sapphire numeric
+@attribute DT-Venus numeric
+@attribute Label {Inactive,Active}
 
 @data
+1325.5,55544.25,0,2.29334,3053,73525.75,2.83574,2.9093,3068.5,42849.25,1.53457,2.77302,-0.00227,-0.00145,-0.0054,1.55946,1.1098,1.40923,-0.96345,1.57977,0.46416,1.23909,0.97115,1.12696,Inactive
 1365,74848.5,2.13794,2.41855,3065,76594,4.86736,3.18267,3125,53017,3.54935,3.01677,-0.00114,-0.00126,-0.0034,2.11355,1.15793,1.76742,1.1745,3.6114,2.47894,1.30675,1.0624,1.22602,Inactive
 1376,80473.75,3.2715,4.26934,3065,88552.5,8.36788,4.84176,2994,71609,7.56015,4.6951,-0.00082,-0.00126,-0.00804,2.27503,1.34625,2.43068,2.30805,7.11192,6.48974,2.30673,1.61623,1.90809,Active
 1358,38330.5,0,1.95883,3105.5,66575.25,1.21676,3.04415,3217,33231.5,1.03987,2.50286,-0.00134,-0.00062,-0.00014,1.06341,0.99952,1.06326,-0.96345,-0.03921,-0.03053,1.05836,1.01616,1.01716,Inactive
