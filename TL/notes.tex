@@ -77,8 +77,8 @@ This learning process corresponds to transferring knowledge learned from the $so
 \item I have split the $Target Dataset$ into two subdatasets. One for training and one for testing. Notice that this training subdataset is going to be our actual $Target Dataset$
 \item Now our datasets look like:
    \begin{itemize}
-	\item $Source Dataset$ has 2781 instances (for Pv from TS3 and TS6 -- file TS3-TS6-Pv.arff)
-	\item $Target Dataset$ has 46 (for Pf from TS6 -- file TS6-Pf.arff)
+	\item $Source Dataset$ has 2781 instances (for Pv from TS3 and TS6 -- file TS3-TS6-Pv-Source.arff)
+	\item $Target Dataset$ has 46 (for Pf from TS6 -- file TS6-Pf-Target.arff)
 	\item $Test Dataset$ has 1389 (for Pf from TS6 -- file TS6-Test-Pf.arff)
    \end{itemize}  
 \end{itemize}  
@@ -93,6 +93,22 @@ Here is what I have done:
 \item I have built a classification model with the TransferBoost Algorithm using both the $Target$ and $Source$ Datasets to carry out Transfer Learning. I used \emph{Decision Stump} as the base classifier.
 \item I have built classification models with WEKA's NaiveBayes, SVM, KNN and J48 Decision Trees using the $Target Dataset$ only. This is because usually we build models using data from the same domain!
 \end{itemize}
+
+\subsection{Column Names:}
+I have abbreviated column names in the following tables to save display space. In order from left to right, they're as follows:\\
+Percentage of Correct guesses,\\
+Percentage of Incorrect guesses,\\
+Area Under the Curve (for class Active),\\
+Kappa statistic,\\
+Mean Abs Error,\\
+Root Mean Squared Error,\\
+Relative Abs Error,\\
+Root Relative Squared Error,\\
+Precision (for class Active),\\
+Recall (for class Active),\\
+F-Measure (for class Active),\\
+Error Rate\\
+
 
 \subsection{Experimental Stat Results 1}
 In this experiment I did 10 fold cross validation using the target dataset only (built models using the target dataset only and used it for the validation)
