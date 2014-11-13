@@ -94,6 +94,58 @@ Here is what I have done:
 \item I have built classification models with WEKA's NaiveBayes, SVM, KNN and J48 Decision Trees using the $Target Dataset$ only. This is because usually we build models using data from the same domain!
 \end{itemize}
 
+\subsection{Experimental Stat Results 1}
+In this experiment I did 10 fold cross validation using the target dataset only (built models using the target dataset only and used it for the validation)
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+      & corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fm & err rate\\ \hline
+    TL & 95.65\% & 4.34\% & 0.97 & 0.72 & 0.04 & 0.21 & 23.81\% & 67.52\% & 1 & 0.6 & 0.74 & 0.04\\ \hline
+    NB & 97.82\% & 2.17\% & 1 & 0.89 & 0.02 & 0.14 & 10.39\% & 46.77\% & 0.83 & 1 & 0.9 & 0.02\\ \hline
+    J48 & 91.3\% & 8.69\% & 0.86 & 0.61 & 0.08 & 0.29 & 41.56\% & 93.55\% & 0.57 & 0.8 & 0.66 & 0.08\\ \hline
+    SMO & 93.47\% & 6.52\% & 0.7 & 0.54 & 0.06 & 0.25 & 31.17\% & 81.02\% & 1 & 0.4 & 0.57 & 0.06\\ \hline
+    IBk & 91.3\% & 8.69\% & 1 & 0.3 & 0.07 & 0.21 & 35.22\% & 67.32\% & 1 & 0.2 & 0.33 & 0.08\\ \hline
+    
+    \end{tabular}       
+\end{center}
+\end{small}
+
+\subsection{Experimental Stat Results 2}
+In this experiment I did 10 fold cross validation using the test dataset (built models using the target dataset and used the test dataset for the validation)
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fm & err rate\\ \hline    
+TL & 99.56\% & 0.43\% & 0.99 & 0.86 & 0 & 0.05 & 12.53\% & 42.36\% & 0.86 & 0.86 & 0.86 & 0\\ \hline
+NB & 97.55\% & 2.44\% & 0.99 & 0.55 & 0.02 & 0.15 & 76.65\% & 125.25 & 0.39 & 1 & 0.56 & 0.02\\ \hline
+J48 & 99.49\% & 0.5\% & 0.89 & 0.83 & 0 & 0.06 & 19.11\% & 55.34\% & 0.85 & 0.81 & 0.83 & 0\\ \hline
+SMO & 99.64\% & 0.35\% & 0.9 & 0.87 & 0 & 0.05 & 11.27\% & 48.05\% & 0.94 & 0.81 & 0.87 & 0\\ \hline
+IBk & 99.42\% & 0.57\% & 0.97 & 0.78 & 0 & 0.06 & 18.53\% & 49.37\% & 0.93 & 0.68 & 0.78 & 0\\ \hline      
+    
+    \end{tabular}       
+\end{center}
+\end{small}
+
+\subsection{Experimental Stat Results 3}
+In this experiment I did validation using the test dataset (built models using the target dataset and used the test dataset for the validation)
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fm & err rate\\ \hline    
+TL & 99.56\% & 0.43 & 0.99 & 0.87 & 0 & 0.06 & 3.35\% & 38.34\% & 0.8 & 0.95 & 0.87 & 0\\ \hline  
+NB & 91.72\% & 8.27\% & 0.95 & 0.25 & 0.08 & 0.28 & 60.47\% & 173.46\% & 0.16 & 1 & 0.27 & 0.08\\ \hline  
+J48 & 98.2\% & 1.79\% & 0.99 & 0.62 & 0.01 & 0.13 & 13.14\% & 80.89\% & 0.46 & 1 & 0.63 & 0.01\\ \hline  
+SMO & 99.28\% & 0.71\% & 0.97 & 0.8 & 0 & 0.08 & 5.25\% & 51.16\% & 0.7 & 0.95 & 0.8 & 0\\ \hline  
+IBk & 99.35\% & 0.64\% & 0.95 & 0.73 & 0.01 & 0.07 & 9.61\% & 44.37\% & 1 & 0.59 & 0.74 & 0 \\ \hline    
+    
+    \end{tabular}       
+\end{center}
+\end{small}
+
+
 \subsection{Experimental Results}
 After building the models as explained above, I have evaluated them using the $Test Dataset$ which is of the same domain as the $Target Dataset$. I have counted Actual vs Predicted results.\\
 The following table shows how many miss-classifications each model makes:\\ 
@@ -107,7 +159,7 @@ The following table shows how many miss-classifications each model makes:\\
 \end{center}
 
 Observe that the TransferBoost model (the one that does Transfer Learning) makes less classification errors meaning it outperforms models built using the $Target Dataset$ alone.
-
+\begin{comment}
 \begin{figure}[htp]
   \begin{center}
     \subfigure[TransferBoost TL Algo]{\label{fig:a1}\includegraphics[scale=0.4]{figs/exp1-10CV}}\\
@@ -118,7 +170,7 @@ Observe that the TransferBoost model (the one that does Transfer Learning) makes
   \caption{Stats after running 10 Fold CV}
   \label{fig:stats1}
 \end{figure}
-
+\end{comment}
 \newpage
 
 
@@ -137,6 +189,59 @@ In this experiment, I am going to try and do TL at assay level. Meaning I will u
 \subsection{Experimental Setup}
 Exactly the same as Experiment I
 
+\subsection{Experimental Stat Results 1}
+In this experiment I did 10 fold cross validation using the target dataset only (built models using the target dataset only and used it for the validation)
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+      & corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fm & err rate\\ \hline
+      TL  & 99.64\% & 0.35\% & 0.68 & 0.79 & 0 & 0.05 & 14.34\% & 57.83\% & 1 & 0.66 & 0.8 & 0\\ \hline
+      NB  & 98.2\% & 1.79\% & 0.67 & 0.43 & 0.01 & 0.13 & 76.73\% & 130.29\% & 0.33 & 0.66 & 0.44 & 0.01\\ \hline
+      J48 & 98.56\% & 1.43\% & 0.66 & 0.32 & 0.01 & 0.12 & 61.86\% & 117.27\% & 0.33 & 0.33 & 0.33 & 0.01\\ \hline
+      SMO & 98.56\% & 1.43\% & 0.66 & 0.32 & 0.01 & 0.11 & 57.1\% & 115.67\% & 0.33 & 0.33 & 0.33 & 0.01\\ \hline
+      IBk & 98.92\% & 1.07\% & 0.86 & 0 & 0.01 & 0.09 & 48.77\% & 89.55\% & 0 & 0 & 0 & 0.01\\ \hline
+
+    
+    
+    \end{tabular}       
+\end{center}
+\end{small}
+
+\subsection{Experimental Stat Results 2}
+In this experiment I did 10 fold cross validation using the test dataset (built models using the target dataset and used the test dataset for the validation)
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fm & err rate\\ \hline    
+TL & 99.73\% & 0.26\% & 0.99 & 0.66 & 0 & 0.04 & 26.09\% & 74.67\% & 0.75 & 0.6 & 0.66 & 0\\ \hline
+NB & 98.65\% & 1.34\% & 0.99 & 0.39 & 0.01 & 0.11 & 135.78\% & 173.48\% & 0.25 & 1 & 0.4 & 0.01\\ \hline
+J48 & 99.82\% & 0.17\% & 0.89 & 0.79 & 0 & 0.04 & 18.1\% & 63.34\% & 0.8 & 0.8 & 0.8 & 0\\ \hline
+SMO & 99.73\% & 0.26\% & 0.79 & 0.66 & 0 & 0.05 & 27.15\% & 77.58\% & 0.75 & 0.6 & 0.66 & 0\\ \hline
+IBk & 99.55\% & 0.44\% & 1 & 0 & 0 & 0.04 & 32.77\% & 61.41\% & 0 & 0 & 0 & 0\\ \hline
+    
+    \end{tabular}       
+\end{center}
+\end{small}
+
+\subsection{Experimental Stat Results 3}
+In this experiment I did validation using the test dataset (built models using the target dataset and used the test dataset for the validation)
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fm & err rate\\ \hline    
+TL & 99.73\% & 0.26\% & 0.99 & 0.57 & 0 & 0.05 & 14.43\% & 76.81\% & 1 & 0.4 & 0.57 & 0\\ \hline  
+NB & 99.28\% & 0.71\% & 0.79 & 0.49 & 0 & 0.08 & 38.46\% & 125.43\% & 0.36 & 0.8 & 0.5 & 0\\ \hline
+J48 & 99.55\% & 0.44\% & 0.69 & 0.44 & 0 & 0.06 & 24.03\% & 91.42\% & 0.5 & 0.4 & 0.44 & 0\\ \hline
+SMO & 99.73\% & 0.26\% & 0.7 & 0.57 & 0 & 0.05 & 14.42\% & 76.81\% & 1 & 0.4 & 0.57 & 0\\ \hline
+IBk & 99.55\% & 0.44\% & 0.99 & 0 & 0 & 0.04 & 23.05\% & 73.11\% & 0 & 0 & 0 & 0  \\ \hline
+    
+    \end{tabular}       
+\end{center}
+\end{small}
+
 \subsection{Experimental Results}
 After building the models as explained above, I have evaluated them using the $Test Dataset$ which is of the same domain as the $Target Dataset$. I have counted Actual vs Predicted results.\\
 The following table shows how many miss-classifications each model makes:\\ 
@@ -150,7 +255,7 @@ The following table shows how many miss-classifications each model makes:\\
 \end{center}
 
 Observe that the TransferBoost model (the one that does Transfer Learning) makes less classification errors meaning it outperforms models built using the $Target Dataset$ alone.
-
+\begin{comment}
 \begin{figure}[htp]
   \begin{center}
     \subfigure[TransferBoost TL]{\label{fig:a2}\includegraphics[scale=0.4]{figs/exp2-10CV}}\\
@@ -161,6 +266,6 @@ Observe that the TransferBoost model (the one that does Transfer Learning) makes
   \caption{Stats after running 10 Fold CV}
   \label{fig:stats2}
 \end{figure}
-
+\end{comment}
 		
 \end{document}
