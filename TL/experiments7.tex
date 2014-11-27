@@ -33,8 +33,9 @@
 
 \begin{document}
 
-\title{Transfer Learning Experiment for Strain \emph{Plasmodium falciparum} from TS6}
+\title{Transfer Learning Experiment for Strain \emph{Leishmania major} from TS7}
 \maketitle
+
 \begin{comment}
 \section{The Data}
 \begin{itemize}
@@ -69,7 +70,7 @@
 \section{Experimental Stat Results for Setting Number 1:}
 \begin{itemize}
 \item Target (Training) Dataset: Size=3 \begin{scriptsize}(3 Inactive + 0 Active)\end{scriptsize}
-\item Testing Dataset: Size=1432 \begin{scriptsize}(1405 Inactive + 27 Active)\end{scriptsize}
+\item Testing Dataset: Size=1323 \begin{scriptsize}(1311 Inactive + 12 Active)\end{scriptsize}
 \item In this experiment I did 3 fold cross validation
 \end{itemize}  
 
@@ -93,11 +94,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.3 & 0.69 & 0.99 & 0.81 & 0 & 0.08 & 3.3 & 36.88 & 0.81 & 0.81 & 0.81 & 0\\ \hline
-	NB & 98.11 & 1.88 & 0.5 & 0 & 0.01 & 0.13 & 8.92 & 60.61 & 0 & 0 & 0 & 0.01\\ \hline
-	J48 & 98.11 & 1.88 & 0.5 & 0 & 0.01 & 0.13 & 8.92 & 60.61 & 0 & 0 & 0 & 0.01\\ \hline
-	SMO & 98.11 & 1.88 & 0.5 & 0 & 0.01 & 0.13 & 8.92 & 60.61 & 0 & 0 & 0 & 0.01\\ \hline
-	IBk & 98.11 & 1.88 & 0.5 & 0 & 0.1 & 0.15 & 50.32 & 67.94 & 0 & 0 & 0 & 0.01\\ \hline  
+      	TL & 99.92 & 0.07 & 0.99 & 0.95 & 0 & 0.02 & 0.49 & 13.5 & 0.92 & 1 & 0.96 & 0\\ \hline
+	NB & 99.09 & 0.9 & 0.5 & 0 & 0 & 0.09 & 4.41 & 44.67 & 0 & 0 & 0 & 0\\ \hline
+	J48 & 99.09 & 0.9 & 0.5 & 0 & 0 & 0.09 & 4.41 & 44.67 & 0 & 0 & 0 & 0\\ \hline
+	SMO & 99.09 & 0.9 & 0.5 & 0 & 0 & 0.09 & 4.41 & 44.67 & 0 & 0 & 0 & 0\\ \hline
+	IBk & 99.09 & 0.9 & 0.5 & 0 & 0.09 & 0.12 & 47.86 & 58.75 & 0 & 0 & 0 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -108,7 +109,7 @@ But when evaluating using the test set, the results were as follows:
 \section{Experimental Stat Results for Setting Number 2:}
 \begin{itemize}
 \item Target (Training) Dataset:Size=6 \begin{scriptsize}(6 Inactive + 0 Active)\end{scriptsize}
-\item Testing Dataset: Size=1429 \begin{scriptsize}(1402 Inactive + 27 Active)\end{scriptsize}
+\item Testing Dataset: Size=1320 \begin{scriptsize}(1308 Inactive + 12 Active)\end{scriptsize}
 \item In this experiment I did 3 fold cross validation
 \end{itemize}  
 % In this experiment I did 3 fold cross validation:
@@ -132,11 +133,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.3 & 0.69 & 0.99 & 0.81 & 0 & 0.08 & 5.03 & 48.46 & 0.81 & 0.81 & 0.81 & 0\\ \hline
-	NB & 98.11 & 1.88 & 0.5 & 0 & 0.01 & 0.13 & 13.57 & 79.63 & 0 & 0 & 0 & 0.01\\ \hline
-	J48 & 98.11 & 1.88 & 0.5 & 0 & 0.01 & 0.13 & 13.57 & 79.63 & 0 & 0 & 0 & 0.01\\ \hline
-	SMO & 98.11 & 1.88 & 0.5 & 0 & 0.01 & 0.13 & 13.57 & 79.63 & 0 & 0 & 0 & 0.01\\ \hline
-	IBk & 98.11 & 1.88 & 0.5 & 0 & 0.04 & 0.13 & 35.18 & 79.2 & 0 & 0 & 0 & 0.01\\ \hline  
+      	TL & 99.84 & 0.15 & 0.99 & 0.91 & 0 & 0.03 & 1.08 & 24.52 & 0.91 & 0.91 & 0.91 & 0\\ \hline
+	NB & 99.09 & 0.9 & 0.5 & 0 & 0 & 0.09 & 6.89 & 63.64 & 0 & 0 & 0 & 0\\ \hline
+	J48 & 99.09 & 0.9 & 0.5 & 0 & 0 & 0.09 & 6.89 & 63.64 & 0 & 0 & 0 & 0\\ \hline
+	SMO & 99.09 & 0.9 & 0.5 & 0 & 0 & 0.09 & 6.89 & 63.64 & 0 & 0 & 0 & 0\\ \hline
+	IBk & 99.09 & 0.9 & 0.5 & 0 & 0.03 & 0.09 & 30.17 & 65.05 & 0 & 0 & 0 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -147,8 +148,8 @@ But when evaluating using the test set, the results were as follows:
 \section{Experimental Stat Results for Setting Number 3:}
 \begin{itemize}
 \item Target (Training) Dataset: Size=12 \begin{scriptsize}(12 Inactive + 0 Active)\end{scriptsize}
-\item Testing Dataset: Size=1423 \begin{scriptsize}(1396 Inactive + 27 Active)\end{scriptsize}
-\item In this experiment I did 10 fold cross validation
+\item Testing Dataset: Size=1314 \begin{scriptsize}(1302 Inactive + 12 Active)\end{scriptsize}
+\item In this experiment I did 3 fold cross validation
 \end{itemize}  
 %In this experiment I did 10 fold cross validation:
 \begin{small}
@@ -160,7 +161,7 @@ But when evaluating using the test set, the results were as follows:
 	NB & 100 & 0 & ? & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
 	J48 & 100 & 0 & ? & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
 	SMO & 100 & 0 & ? & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
-	IBk & 100 & 0 & ? & 1 & 0.01 & 0.01 & 22.9 & 22.9 & 0 & 0 & 0 & 0\\ \hline  
+	IBk & 100 & 0 & ? & 1 & 0.02 & 0.02 & 23.8 & 23.8 & 0 & 0 & 0 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -171,11 +172,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.29 & 0.7 & 0.99 & 0.81 & 0 & 0.08 & 8.01 & 57.34 & 0.81 & 0.81 & 0.81 & 0\\ \hline
-	NB & 98.1 & 1.89 & 0.5 & 0 & 0.01 & 0.13 & 21.63 & 94.23 & 0 & 0 & 0 & 0.01\\ \hline
-	J48 & 98.1 & 1.89 & 0.5 & 0 & 0.01 & 0.13 & 21.63 & 94.23 & 0 & 0 & 0 & 0.01\\ \hline
-	SMO & 98.1 & 1.89 & 0.5 & 0 & 0.01 & 0.13 & 21.63 & 94.23 & 0 & 0 & 0 & 0.01\\ \hline
-	IBk & 98.1 & 1.89 & 0.5 & 0 & 0.03 & 0.13 & 39.33 & 93.35 & 0 & 0 & 0 & 0.01\\ \hline  
+      	TL & 99.92 & 0.07 & 0.99 & 0.95 & 0 & 0.02 & 1.29 & 25.67 & 0.92 & 1 & 0.96 & 0\\ \hline
+	NB & 99.08 & 0.91 & 0.5 & 0 & 0 & 0.09 & 11.52 & 84.04 & 0 & 0 & 0 & 0\\ \hline
+	J48 & 99.08 & 0.91 & 0.5 & 0 & 0 & 0.09 & 11.52 & 84.04 & 0 & 0 & 0 & 0\\ \hline
+	SMO & 99.08 & 0.91 & 0.5 & 0 & 0 & 0.09 & 11.52 & 84.04 & 0 & 0 & 0 & 0\\ \hline
+	IBk & 99.08 & 0.91 & 0.5 & 0 & 0.02 & 0.09 & 31.5 & 83.88 & 0 & 0 & 0 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -185,8 +186,8 @@ But when evaluating using the test set, the results were as follows:
 
 \section{Experimental Stat Results for Setting Number 4:}
 \begin{itemize}
-\item Target (Training) Dataset: Size=24 \begin{scriptsize}(24 Inactive + 0 Active)\end{scriptsize}
-\item Testing Dataset: Size=1411 \begin{scriptsize}(1384 Inactive + 27 Active)\end{scriptsize}
+\item Target (Training) Dataset: Size=25 \begin{scriptsize}(24 Inactive + 1 Active)\end{scriptsize}
+\item Testing Dataset: Size=1301 \begin{scriptsize}(1290 Inactive + 11 Active)\end{scriptsize}
 \item In this experiment I did 10 fold cross validation
 \end{itemize}  
 
@@ -196,11 +197,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 95.83 & 4.16 & ? & 0 & 0.04 & 0.2 & 97.87 & 479.36 & 0 & 0 & 0 & 0.04\\ \hline
-	NB & 100 & 0 & ? & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
-	J48 & 100 & 0 & ? & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
-	SMO & 100 & 0 & ? & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
-	IBk & 100 & 0 & ? & 1 & 0 & 0 & 21.46 & 21.46 & 0 & 0 & 0 & 0\\ \hline  
+      	TL & 100 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0\\ \hline
+	NB & 96 & 4 & 0.5 & 0 & 0.04 & 0.2 & 35.19 & 96.7 & 0 & 0 & 0 & 0.04\\ \hline
+	J48 & 96 & 4 & 0.04 & 0 & 0.07 & 0.2 & 69.68 & 98.79 & 0 & 0 & 0 & 0.04\\ \hline
+	SMO & 96 & 4 & 0.5 & 0 & 0.04 & 0.2 & 35.19 & 96.7 & 0 & 0 & 0 & 0.04\\ \hline
+	IBk & 96 & 4 & 0.7 & 0 & 0.04 & 0.19 & 42.28 & 95.93 & 0 & 0 & 0 & 0.04\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -211,11 +212,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.36 & 0.63 & 0.99 & 0.82 & 0 & 0.07 & 11.37 & 57.16 & 0.84 & 0.81 & 0.83 & 0\\ \hline
-	NB & 98.08 & 1.91 & 0.5 & 0 & 0.01 & 0.13 & 34.09 & 99.98 & 0 & 0 & 0 & 0.01\\ \hline
-	J48 & 98.08 & 1.91 & 0.5 & 0 & 0.01 & 0.13 & 34.09 & 99.98 & 0 & 0 & 0 & 0.01\\ \hline
-	SMO & 98.08 & 1.91 & 0.5 & 0 & 0.01 & 0.13 & 34.09 & 99.98 & 0 & 0 & 0 & 0.01\\ \hline
-	IBk & 98.08 & 1.91 & 0.5 & 0 & 0.02 & 0.13 & 48.13 & 99.33 & 0 & 0 & 0 & 0.01\\ \hline  
+      	TL & 99.92 & 0.07 & 0.99 & 0.95 & 0 & 0.02 & 1.28 & 26 & 0.91 & 1 & 0.95 & 0\\ \hline
+	NB & 99.15 & 0.84 & 0.5 & 0 & 0 & 0.09 & 10.4 & 81.62 & 0 & 0 & 0 & 0\\ \hline
+	J48 & 99.15 & 0.84 & 0.5 & 0 & 0.04 & 0.09 & 58.78 & 85.97 & 0 & 0 & 0 & 0\\ \hline
+	SMO & 99.92 & 0.07 & 0.95 & 0.95 & 0 & 0.02 & 0.94 & 24.61 & 1 & 0.9 & 0.95 & 0\\ \hline
+	IBk & 99.15 & 0.84 & 0.9 & 0 & 0.01 & 0.07 & 18.25 & 68.47 & 0 & 0 & 0 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -225,8 +226,8 @@ But when evaluating using the test set, the results were as follows:
 
 \section{Experimental Stat Results for Setting Number 5:}
 \begin{itemize}
-\item Target (Training) Dataset: Size=49 \begin{scriptsize}(48 Inactive + 1 Active)\end{scriptsize}
-\item Testing Dataset: Size=1386 \begin{scriptsize}(1360 Inactive + 26 Active)\end{scriptsize}
+\item Target (Training) Dataset: Size=50 \begin{scriptsize}(48 Inactive + 2 Active)\end{scriptsize}
+\item Testing Dataset: Size=1276 \begin{scriptsize}(1266 Inactive + 10 Active)\end{scriptsize}
 \item In this experiment I did 10 fold cross validation
 \end{itemize}  
 
@@ -236,11 +237,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 95.91 & 4.08 & 0.16 & -0.03 & 0.04 & 0.2 & 66.89 & 137.85 & 0 & 0 & 0 & 0.04\\ \hline
-	NB & 97.95 & 2.04 & 0.5 & 0 & 0.02 & 0.14 & 33.61 & 97.97 & 0 & 0 & 0 & 0.02\\ \hline
-	J48 & 97.95 & 2.04 & 0.04 & 0 & 0.04 & 0.14 & 67.16 & 99.07 & 0 & 0 & 0 & 0.02\\ \hline
-	SMO & 95.91 & 4.08 & 0.48 & -0.03 & 0.04 & 0.2 & 67.23 & 138.55 & 0 & 0 & 0 & 0.04\\ \hline
-	IBk & 97.95 & 2.04 & 0.53 & 0 & 0.02 & 0.14 & 47.38 & 99.58 & 0 & 0 & 0 & 0.02\\ \hline  
+      	TL & 100 & 0 & 1 & 1 & 0 & 0.04 & 6.61 & 22.41 & 1 & 1 & 1 & 0\\ \hline
+	NB & 94 & 6 & 0.09 & -0.03 & 0.06 & 0.24 & 62.38 & 122.14 & 0 & 0 & 0 & 0.06\\ \hline
+	J48 & 92 & 8 & 0.87 & -0.05 & 0.06 & 0.23 & 72.09 & 118.1 & 0 & 0 & 0 & 0.08\\ \hline
+	SMO & 98 & 2 & 0.75 & 0.65 & 0.02 & 0.14 & 20.79 & 70.51 & 1 & 0.5 & 0.66 & 0.02\\ \hline
+	IBk & 96 & 4 & 0.75 & 0 & 0.04 & 0.18 & 41.68 & 89.97 & 0 & 0 & 0 & 0.04\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -251,11 +252,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.35 & 0.64 & 0.99 & 0.82 & 0 & 0.07 & 11.1 & 55.07 & 0.81 & 0.84 & 0.83 & 0\\ \hline
-	NB & 98.12 & 1.87 & 0.5 & 0 & 0.01 & 0.13 & 33.19 & 99.82 & 0 & 0 & 0 & 0.01\\ \hline
-	J48 & 98.12 & 1.87 & 0.5 & 0 & 0.03 & 0.13 & 67.96 & 98.88 & 0 & 0 & 0 & 0.01\\ \hline
-	SMO & 99.42 & 0.57 & 0.92 & 0.84 & 0 & 0.07 & 10.21 & 55.37 & 0.84 & 0.84 & 0.84 & 0\\ \hline
-	IBk & 98.12 & 1.87 & 0.96 & 0 & 0.01 & 0.11 & 34.77 & 81.65 & 0 & 0 & 0 & 0.01\\ \hline  
+      	TL & 100 & 0 & 1 & 1 & 0 & 0 & 0.05 & 0.78 & 1 & 1 & 1 & 0\\ \hline
+	NB & 98.04 & 1.95 & 0.99 & 0.41 & 0.01 & 0.13 & 30.2 & 137.27 & 0.27 & 0.9 & 0.41 & 0.01\\ \hline
+	J48 & 98.43 & 1.56 & 0.84 & 0.4 & 0.01 & 0.09 & 20.21 & 93.03 & 0.29 & 0.7 & 0.41 & 0.01\\ \hline
+	SMO & 99.68 & 0.31 & 0.94 & 0.81 & 0 & 0.05 & 4.85 & 55.27 & 0.75 & 0.9 & 0.81 & 0\\ \hline
+	IBk & 99.21 & 0.78 & 0.79 & 0 & 0.01 & 0.07 & 16 & 71.73 & 0 & 0 & 0 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -265,8 +266,8 @@ But when evaluating using the test set, the results were as follows:
 
 \section{Experimental Stat Results for Setting Number 6:}
 \begin{itemize}
-\item Target (Training) Dataset: Size=98 \begin{scriptsize}(96 Inactive + 2 Active)\end{scriptsize} 
-\item Testing Dataset: Size=1337 \begin{scriptsize}(1312 Inactive + 25 Active)\end{scriptsize}
+\item Target (Training) Dataset: Size=100 \begin{scriptsize}(96 Inactive + 4 Active)\end{scriptsize} 
+\item Testing Dataset: Size=1226 \begin{scriptsize}(1218 Inactive + 8 Active)\end{scriptsize}
 \item In this experiment I did 10 fold cross validation
 \end{itemize}  
 %In this experiment I did 10 fold cross validation:
@@ -275,11 +276,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 98.97 & 1.02 & 0.99 & 0.79 & 0.01 & 0.1 & 20.22 & 70.58 & 0.66 & 1 & 0.8 & 0.01\\ \hline
-	NB & 95.91 & 4.08 & 0.09 & -0.03 & 0.04 & 0.2 & 80.82 & 141.16 & 0 & 0 & 0 & 0.04\\ \hline
-	J48 & 96.93 & 3.06 & 0.89 & -0.02 & 0.03 & 0.17 & 64.29 & 121.37 & 0 & 0 & 0 & 0.03\\ \hline
-	SMO & 97.95 & 2.04 & 0.74 & 0.48 & 0.02 & 0.14 & 40.41 & 99.82 & 0.5 & 0.5 & 0.5 & 0.02\\ \hline
-	IBk & 97.95 & 2.04 & 0.58 & 0 & 0.02 & 0.14 & 48.72 & 100.61 & 0 & 0 & 0 & 0.02\\ \hline  
+      	TL & 100 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0\\ \hline
+	NB & 94 & 6 & 0.99 & 0.54 & 0.05 & 0.24 & 67.95 & 121.59 & 0.4 & 1 & 0.57 & 0.06\\ \hline
+	J48 & 96 & 4 & 0.74 & 0.47 & 0.03 & 0.18 & 41.6 & 91.64 & 0.5 & 0.5 & 0.5 & 0.04\\ \hline
+	SMO & 100 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0\\ \hline
+	IBk & 96 & 4 & 0.87 & 0 & 0.03 & 0.15 & 37.07 & 77.62 & 0 & 0 & 0 & 0.04\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -290,11 +291,11 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.32 & 0.67 & 0.99 & 0.81 & 0 & 0.08 & 14.68 & 60.48 & 0.83 & 0.8 & 0.81 & 0\\ \hline
-	NB & 99.62 & 0.37 & 0.98 & 0.9 & 0 & 0.06 & 7.86 & 44.98 & 0.85 & 0.96 & 0.9 & 0\\ \hline
-	J48 & 98.27 & 1.72 & 0.54 & 0.14 & 0.01 & 0.13 & 36.15 & 96.49 & 1 & 0.08 & 0.14 & 0.01\\ \hline
-	SMO & 99.17 & 0.82 & 0.79 & 0.72 & 0 & 0.09 & 17.29 & 66.72 & 0.93 & 0.6 & 0.73 & 0\\ \hline
-	IBk & 98.13 & 1.86 & 0.86 & 0 & 0.01 & 0.11 & 35.27 & 81.06 & 0 & 0 & 0 & 0.01\\ \hline  
+      	TL & 99.91 & 0.08 & 0.99 & 0.94 & 0 & 0.03 & 2.01 & 33.07 & 0.88 & 1 & 0.94 & 0\\ \hline
+	NB & 98.12 & 1.87 & 0.99 & 0.4 & 0.01 & 0.13 & 34.18 & 150.43 & 0.25 & 1 & 0.41 & 0.01\\ \hline
+	J48 & 99.02 & 0.97 & 0.87 & 0.49 & 0 & 0.08 & 16.63 & 92.2 & 0.37 & 0.75 & 0.5 & 0\\ \hline
+	SMO & 99.59 & 0.4 & 0.87 & 0.7 & 0 & 0.06 & 7.42 & 70.14 & 0.66 & 0.75 & 0.7 & 0\\ \hline
+	IBk & 99.34 & 0.65 & 0.87 & 0 & 0 & 0.06 & 12.5 & 66.34 & 0 & 0 & 0 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
@@ -304,8 +305,8 @@ But when evaluating using the test set, the results were as follows:
 
 \section{Experimental Stat Results for Setting Number 7:}
 \begin{itemize}
-\item Target (Training) Dataset: Size=196 \begin{scriptsize}(192 Inactive + 4 Active)\end{scriptsize}
-\item Testing Dataset: Size=1239 \begin{scriptsize}(1216 Inactive + 23 Active)\end{scriptsize}
+\item Target (Training) Dataset: Size=200 \begin{scriptsize}(192 Inactive + 8 Active)\end{scriptsize}
+\item Testing Dataset: Size=1126 \begin{scriptsize}(1122 Inactive + 4 Active)\end{scriptsize}
 \item In this experiment I did 10 fold cross validation
 \end{itemize}  
 %In this experiment I did 10 fold cross validation:
@@ -314,110 +315,32 @@ But when evaluating using the test set, the results were as follows:
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
     \hline
       	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 100 & 0 & 1 & 1 & 0 & 0 & 0.01 & 0.06 & 1 & 1 & 1 & 0\\ \hline
-	NB & 97.95 & 2.04 & 0.99 & 0.65 & 0.02 & 0.14 & 45.12 & 100.61 & 0.5 & 1 & 0.66 & 0.02\\ \hline
-	J48 & 98.97 & 1.02 & 0.87 & 0.74 & 0.01 & 0.1 & 22.56 & 71.14 & 0.75 & 0.75 & 0.75 & 0.01\\ \hline
+      	TL & 100 & 0 & 1 & 1 & 0 & 0 & 0.03 & 0.19 & 1 & 1 & 1 & 0\\ \hline
+	NB & 98.5 & 1.5 & 0.99 & 0.83 & 0.01 & 0.12 & 18.34 & 62.2 & 0.72 & 1 & 0.84 & 0.01\\ \hline
+	J48 & 98.5 & 1.5 & 0.81 & 0.76 & 0.01 & 0.12 & 18.39 & 62.4 & 1 & 0.62 & 0.76 & 0.01\\ \hline
+	SMO & 98.5 & 1.5 & 0.87 & 0.79 & 0.01 & 0.12 & 18.39 & 62.4 & 0.85 & 0.75 & 0.79 & 0.01\\ \hline
+	IBk & 98.5 & 1.5 & 0.87 & 0.76 & 0.01 & 0.11 & 22.16 & 58.05 & 1 & 0.62 & 0.76 & 0.01\\ \hline  
+    \end{tabular}       
+\end{center}
+\end{small}
+
+But when evaluating using the test set, the results were as follows:
+\begin{small}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+      	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
+      	TL & 99.91 & 0.08 & 1 & 0.88 & 0 & 0.02 & 1.86 & 41.18 & 0.8 & 1 & 0.88 & 0\\ \hline
+	NB & 95.64 & 4.35 & 0.98 & 0.13 & 0.04 & 0.2 & 90.59 & 286.74 & 0.07 & 1 & 0.14 & 0.04\\ \hline
+	J48 & 97.51 & 2.48 & 0.73 & 0.11 & 0.02 & 0.15 & 52.03 & 218.24 & 0.07 & 0.5 & 0.12 & 0.02\\ \hline
 	SMO & 100 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0\\ \hline
-	IBk & 97.95 & 2.04 & 0.92 & 0 & 0.01 & 0.1 & 36.26 & 77.22 & 0 & 0 & 0 & 0.02\\ \hline  
-    \end{tabular}       
-\end{center}
-\end{small}
-
-But when evaluating using the test set, the results were as follows:
-\begin{small}
-\begin{center}
-    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
-    \hline
-      	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.19 & 0.8 & 0.99 & 0.77 & 0 & 0.08 & 18.82 & 66.46 & 0.78 & 0.78 & 0.78 & 0\\ \hline
-	NB & 97.74 & 2.25 & 0.99 & 0.61 & 0.02 & 0.15 & 53.32 & 111.05 & 0.45 & 1 & 0.62 & 0.02\\ \hline
-	J48 & 98.06 & 1.93 & 0.73 & 0.46 & 0.01 & 0.13 & 45.17 & 102.98 & 0.47 & 0.47 & 0.47 & 0.01\\ \hline
-	SMO & 98.95 & 1.04 & 0.76 & 0.64 & 0.01 & 0.1 & 24.47 & 75.79 & 0.85 & 0.52 & 0.64 & 0.01\\ \hline
-	IBk & 98.78 & 1.21 & 0.82 & 0.51 & 0.01 & 0.1 & 32.05 & 74.09 & 1 & 0.34 & 0.51 & 0.01\\ \hline  
+	IBk & 99.91 & 0.08 & 0.99 & 0.85 & 0 & 0.02 & 6.16 & 41.27 & 1 & 0.75 & 0.85 & 0\\ \hline  
     \end{tabular}       
 \end{center}
 \end{small}
 %\textbf{Conclusion:} TL is the winner
 
-\newpage
 
-\section{Experimental Stat Results for Setting Number 8:}
-\begin{itemize}
-\item Target (Training) Dataset: Size=392 \begin{scriptsize}(384 Inactive + 8 Active)\end{scriptsize} 
-\item Testing Dataset: Size=1043 \begin{scriptsize}(1024 Inactive + 19 Active)\end{scriptsize}
-\item In this experiment I did 10 fold cross validation
-\end{itemize}  
-
-%In this experiment I did 10 fold cross validation:
-\begin{small}
-\begin{center}
-    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
-    \hline
-      	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.48 & 0.51 & 0.97 & 0.87 & 0 & 0.07 & 12.02 & 50.31 & 0.87 & 0.87 & 0.87 & 0\\ \hline
-	NB & 97.95 & 2.04 & 0.99 & 0.65 & 0.01 & 0.13 & 44.81 & 95.51 & 0.5 & 1 & 0.66 & 0.02\\ \hline
-	J48 & 98.97 & 1.02 & 0.87 & 0.74 & 0.01 & 0.1 & 23.95 & 71.38 & 0.75 & 0.75 & 0.75 & 0.01\\ \hline
-	SMO & 99.74 & 0.25 & 0.93 & 0.93 & 0 & 0.05 & 5.98 & 35.69 & 1 & 0.87 & 0.93 & 0\\ \hline
-	IBk & 99.48 & 0.51 & 0.92 & 0.85 & 0 & 0.05 & 12.09 & 42.21 & 1 & 0.75 & 0.85 & 0\\ \hline  
-    \end{tabular}       
-\end{center}
-\end{small}
-
-But when evaluating using the test set, the results were as follows:
-\begin{small}
-\begin{center}
-    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
-    \hline
-      	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.23 & 0.76 & 0.99 & 0.78 & 0 & 0.08 & 17.28 & 59.91 & 0.78 & 0.78 & 0.78 & 0\\ \hline
-	NB & 98.08 & 1.91 & 0.99 & 0.64 & 0.01 & 0.13 & 47.78 & 103.43 & 0.48 & 1 & 0.65 & 0.01\\ \hline
-	J48 & 99.52 & 0.47 & 0.94 & 0.86 & 0 & 0.06 & 11.91 & 51.74 & 0.85 & 0.89 & 0.87 & 0\\ \hline
-	SMO & 99.13 & 0.86 & 0.81 & 0.72 & 0 & 0.09 & 21.45 & 69.41 & 0.85 & 0.63 & 0.72 & 0\\ \hline
-	IBk & 98.75 & 1.24 & 0.94 & 0.51 & 0.01 & 0.09 & 30.79 & 70.77 & 0.87 & 0.36 & 0.51 & 0.01\\ \hline  
-    \end{tabular}       
-\end{center}
-\end{small}
-%\textbf{Conclusion:} TL is the winner
-
-\newpage
-
-\section{Experimental Stat Results for Setting Number 9:}
-\begin{itemize}
-\item Target (Training) Dataset: Size=784 \begin{scriptsize}(768 Inactive + 16 Active)\end{scriptsize} 
-\item Testing Dataset: Size=651 \begin{scriptsize}(640 Inactive + 11 Active)\end{scriptsize}
-\item In this experiment I did 10 fold cross validation
-\end{itemize}  
-
-%In this experiment I did 10 fold cross validation:
-\begin{small}
-\begin{center}
-    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
-    \hline
-      	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.36 & 0.63 & 0.99 & 0.84 & 0 & 0.07 & 15.85 & 53.87 & 0.82 & 0.87 & 0.84 & 0\\ \hline
-	NB & 97.57 & 2.42 & 0.99 & 0.61 & 0.02 & 0.15 & 59.8 & 110.44 & 0.45 & 1 & 0.62 & 0.02\\ \hline
-	J48 & 99.74 & 0.25 & 0.96 & 0.93 & 0 & 0.05 & 8.54 & 36.28 & 0.93 & 0.93 & 0.93 & 0\\ \hline
-	SMO & 99.61 & 0.38 & 0.93 & 0.9 & 0 & 0.06 & 9.26 & 43.73 & 0.93 & 0.87 & 0.9 & 0\\ \hline
-	IBk & 99.1 & 0.89 & 1 & 0.71 & 0 & 0.06 & 17.97 & 46.28 & 1 & 0.56 & 0.72 & 0\\ \hline  
-    \end{tabular}       
-\end{center}
-\end{small}
-
-But when evaluating using the test set, the results were as follows:
-\begin{small}
-\begin{center}
-    \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l |}
-    \hline
-      	& corr & incorr  & auc & kap & mae & rmse & rae & rrse & prec & rec & fM & err rate\\ \hline
-      	TL & 99.38 & 0.61 & 0.99 & 0.83 & 0 & 0.07 & 17.84 & 61.31 & 0.76 & 0.9 & 0.83 & 0\\ \hline
-	NB & 96.15 & 3.84 & 0.98 & 0.45 & 0.03 & 0.19 & 101.62 & 151.91 & 0.3 & 1 & 0.46 & 0.03\\ \hline
-	J48 & 99.23 & 0.76 & 0.95 & 0.77 & 0 & 0.08 & 23.16 & 67.19 & 0.75 & 0.81 & 0.78 & 0\\ \hline
-	SMO & 99.38 & 0.61 & 0.9 & 0.81 & 0 & 0.07 & 16.25 & 60.77 & 0.81 & 0.81 & 0.81 & 0\\ \hline
-	IBk & 99.38 & 0.61 & 0.99 & 0.79 & 0 & 0.06 & 17.73 & 47.46 & 0.88 & 0.72 & 0.79 & 0\\ \hline  
-    \end{tabular}       
-\end{center}
-\end{small}
-%\textbf{Conclusion:} TL is the winner
 
 
 %\date{Mar 2014}
