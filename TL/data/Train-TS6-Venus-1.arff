@@ -1,0 +1,32 @@
+@relation Train-TS6-Venus-1
+
+@attribute cherry-initial-fluorescence numeric
+@attribute cherry-final-fluorescence numeric
+@attribute cherry-lagtime2 numeric
+@attribute cherry-doubletime numeric
+@attribute sapphire-initial-fluorescence numeric
+@attribute sapphire-final-fluorescence numeric
+@attribute sapphire-lagtime2 numeric
+@attribute sapphire-doubletime numeric
+@attribute venus-initial-fluorescence numeric
+@attribute venus-final-fluorescence numeric
+@attribute venus-lagtime2 numeric
+@attribute venus-doubletime numeric
+@attribute F-Cherry numeric
+@attribute F-Sapphire numeric
+@attribute F-Venus numeric
+@attribute HitRatio-Cherry numeric
+@attribute HitRatio-Sapphire numeric
+@attribute HitRatio-Venus numeric
+@attribute MIY-Cherry numeric
+@attribute MIY-Sapphire numeric
+@attribute MIY-Venus numeric
+@attribute DT-Cherry numeric
+@attribute DT-Sapphire numeric
+@attribute DT-Venus numeric
+@attribute Label {Inactive,Active}
+
+@data
+2054,28670.5,1.99163,1.98176,3464,67197.5,2.01423,2.70523,3682.5,35579.5,0.97895,2.51958,0.02292,0.00523,0.01027,0.91051,1.00612,0.92945,0.86019,0.4216,0.37798,0.98413,0.9813,0.97041,Inactive
+1308,27085.5,1.2516,1.97103,3081,65665,1.61658,2.77544,3163,35088.2,0.77618,2.53657,-0.00199,-0.00002,-0.00207,0.92419,0.99587,0.95777,-0.01976,-0.13295,0.08421,0.9983,1.02526,0.99523,Inactive
+1467,30191.5,1.0727,2.09605,3118,63806,1.85003,2.6879,3348,37942.5,0.73882,2.55128,0.00284,-0.00023,0.00052,0.98262,0.95804,1.00806,-0.05874,0.2574,0.13785,1.04088,0.97501,0.98262,Inactive

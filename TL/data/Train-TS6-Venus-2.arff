@@ -1,0 +1,35 @@
+@relation Train-TS6-Venus-2
+
+@attribute cherry-initial-fluorescence numeric
+@attribute cherry-final-fluorescence numeric
+@attribute cherry-lagtime2 numeric
+@attribute cherry-doubletime numeric
+@attribute sapphire-initial-fluorescence numeric
+@attribute sapphire-final-fluorescence numeric
+@attribute sapphire-lagtime2 numeric
+@attribute sapphire-doubletime numeric
+@attribute venus-initial-fluorescence numeric
+@attribute venus-final-fluorescence numeric
+@attribute venus-lagtime2 numeric
+@attribute venus-doubletime numeric
+@attribute F-Cherry numeric
+@attribute F-Sapphire numeric
+@attribute F-Venus numeric
+@attribute HitRatio-Cherry numeric
+@attribute HitRatio-Sapphire numeric
+@attribute HitRatio-Venus numeric
+@attribute MIY-Cherry numeric
+@attribute MIY-Sapphire numeric
+@attribute MIY-Venus numeric
+@attribute DT-Cherry numeric
+@attribute DT-Sapphire numeric
+@attribute DT-Venus numeric
+@attribute Label {Inactive,Active}
+
+@data
+1398.5,27850.8,1.28246,1.97081,3081.5,61928,1.7641,2.74158,3145,33498.8,0.72131,2.55994,0.00125,-0.00002,-0.00261,0.94838,0.9364,0.91062,0.0111,0.01457,0.02934,0.99819,1.01275,1.0044,Inactive
+1485,31236.8,1.20014,1.88385,3274.5,68630.5,1.5891,2.64696,3629.5,38456.2,0.60633,2.56548,0.00122,0.00093,0.00425,1.03504,1.04721,1.02847,0.20713,0.19876,-0.00194,0.93261,0.94629,0.99723,Inactive
+1519.5,26266.5,0.75836,2.06558,3280.5,62326.8,1.2475,2.73743,4768.5,34466.8,1.5245,2.45581,0.0003,-0.00021,0.03051,0.8839,0.96431,0.88783,-0.11997,-0.06506,0.93228,1.01344,0.98518,0.94484,Inactive
+1803.5,66195.6,1.33361,1.99234,3914,87147,1.9072,3.00802,3513,49663.5,1.08324,2.70094,0.00502,0.00374,0.00344,1.05991,0.98193,1.01163,0.26648,0.23141,0.03116,1.03973,1.03429,1.02137,Inactive
+1356,31745,1.05776,1.99315,3084,63242,1.79731,2.6712,3731,35649.8,1.50401,2.40402,-0.00027,0.00002,0.01497,1.08952,0.95727,0.95757,-0.2136,0.04778,0.81204,1.0095,0.98675,0.94322,Inactive
+1376,32285.2,0.75095,1.99471,3496.5,66791.2,1.41557,2.93965,3567,39124.5,0.59192,2.59519,-0.00257,0.00449,0.00241,1.07531,1.01418,1.05006,-0.24206,0.02523,-0.01634,0.98749,1.05093,1.00878,Inactive
