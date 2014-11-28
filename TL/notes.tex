@@ -46,22 +46,33 @@
 
 \section{The Data}
 \begin{itemize}
-\item Two \texttt{Source} datasets TS3-Sapphire.arff and TS6-Sapphire.arff (This is for strain \emph{Plasmodium vivax})
-\item The TL algorithm supports having multiple source datasets as it assigns weights to instances as well as source datasets
+\item Two \texttt{Source} datasets TS3-Sapphire.arff and TS6-Sapphire.arff (This is for strain \emph{Plasmodium vivax} for assays TS3 and TS6 respectively)
+\item The TL algorithm (TransferBoost) supports having multiple source datasets as it assigns weights to instances as well as source datasets
 \item I have done \textbf{two experiments} with two different \texttt{Target} Datasets:
 \begin{itemize}
 \item Data from the Venus Channel for assay TS6 (This is for strain \emph{Plasmodium falciparum})
+\begin{itemize}
 \item this dataset has 1435 instances and the number of \texttt{Active} instances is 27
-\item details of this experiment are in \textbf{experiment6.pdf}
-\item Data from the Sapphire Channel for assay TS7 (This is for strain \emph{Leishmania major}) 
+\item details of this experiment are in \textbf{experiments6.pdf}
+\end{itemize}
+\item Data from the Sapphire Channel for assay TS7 (This is for strain \emph{Leishmania major})
+\begin{itemize}
 \item this dataset has 1326 instances and the number of \texttt{Active} instances is 12
-\item details of this experiment are in \textbf{experiment7.pdf}
+\item details of this experiment are in \textbf{experiments7.pdf}
+\end{itemize}
 \end{itemize}
 \item Iteratively, I split each of these two datasets to create \texttt{Target} and \texttt{Test} datasets 
 %\item This dataset has 1435 instances and the percentage of \texttt{Active} instances is \textasciitilde2\% (27 instances)
 \item I started with a very small \texttt{Target} dataset of all \texttt{Inactives} and doubled the size at each iteration
 \item As the size increased, I started to include Active instances (with the same proportion for \emph{Plasmodium falciparum} data)
-\item Remember. the \texttt{Target} dataset is used as \texttt{Training} dataset to build TL, NB, J48, SMO and KNN models
+\item Remember. the \texttt{Target} dataset is used as \texttt{Training} dataset to build TL (Transfer Learning .. which also uses the source datasets), Naive Bayes (NB), Decision Trees (J48), Support Vector Machine (SMO) and k-Nearest Neighbour (IBk) models
+%\subsection{Algorithm Names in Results Tables:}
+%I have abbreviated column names in the tables to save display space:\\
+%TL = Transfer Learning,\\
+%NB = Naive Bayes,\\
+%J48 = The J48 Decision Trees,\\
+%SMO = Support Vector Machine,\\
+%IBk = Instance Based (k-Nearest Neighbour)
 \item Details of the various datasets are shown in the following tables:
 
 %\begin{center}
@@ -103,15 +114,6 @@
 \end{itemize}  
 
 \newpage
-\subsection{Algorithm Names in Results Tables:}
-I have abbreviated column names in the tables to save display space:\\
-TL = Transfer Learning,\\
-NB = Naive Bayes,\\
-J48 = The J48 Decision Trees,\\
-SMO = Support Vector Machine,\\
-IBk = Instance Based (k-Nearest Neighbour)
-
-
 \subsection{Column Names in Results Tables:}
 I have abbreviated column names in the tables to save display space. In order from left to right, they're as follows:\\
 corr = Percentage of Correct guesses,\\
@@ -126,6 +128,10 @@ prec = Precision (for class Active),\\
 rec = Recall (for class Active),\\
 fM = F-Measure (for class Active),\\
 eR = Error Rate\\
+
+
+\subsection{My Conclusion:}
+Transfer Learning outperforms ordinary algorithms when there is little data. As more data becomes available, some other algorithms perform equally well!
 %\newpage
 
 
