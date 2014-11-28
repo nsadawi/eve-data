@@ -61,10 +61,11 @@
 \item details of this experiment are in \textbf{experiments7.pdf}
 \end{itemize}
 \end{itemize}
-\item Iteratively, I split each of these two datasets to create \texttt{Target} and \texttt{Test} datasets 
+\item Iteratively, I split each of these two datasets to create \texttt{Target} and \texttt{Test} datasets
 %\item This dataset has 1435 instances and the percentage of \texttt{Active} instances is \textasciitilde2\% (27 instances)
 \item I started with a very small \texttt{Target} dataset of all \texttt{Inactives} and doubled the size at each iteration
 \item As the size increased, I started to include Active instances (with the same proportion for \emph{Plasmodium falciparum} data)
+\item I built models using the \texttt{Target} dataset, evaluated via \texttt{cross validation} and \texttt{using the Test dataset}
 \item Remember. the \texttt{Target} dataset is used as \texttt{Training} dataset to build TL (Transfer Learning .. which also uses the source datasets), Naive Bayes (NB), Decision Trees (J48), Support Vector Machine (SMO) and k-Nearest Neighbour (IBk) models
 %\subsection{Algorithm Names in Results Tables:}
 %I have abbreviated column names in the tables to save display space:\\
